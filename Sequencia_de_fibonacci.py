@@ -8,12 +8,24 @@ def fibonacci(n):
     # Verifica as duas condições
     return quadradoPerfeito(5 * n * n + 4) or quadradoPerfeito(5 * n * n - 4)
 
+anterior = 0
+proximo = 0
+qtd = int(input("Até qual número deseja ver a sequencia fibonacci?"))
+
 n = int(input("Qual número positivo você que verificar? "))
 
 if (fibonacci(n)):
     print(f"{n} pertence à série de Fibonacci.")
 else:
     print(f"{n} não pertence à série de Fibonacci.")
+    
+while(proximo < qtd):
+    print(proximo)
+    proximo = proximo + anterior
+    anterior = proximo - anterior
+    if(proximo == 0):
+        proximo = proximo + 1
+print("...")
     
 
 '''
